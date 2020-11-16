@@ -1,0 +1,4 @@
+<div>
+  <label for="twistAngle">Twist Angle: {{angle.toFixed(2)}} </label>
+  <input type="range" id="twistAngle" name="twistAngle" min="0" max="3" step="0.01" [(ngModel)]="angle" (ngModelChange)="changeAngle()">
+</div>

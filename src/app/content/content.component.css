@@ -1,11 +1,11 @@
 .InnerContent{
   display: grid;
-  grid-template-columns: 1fr 5fr 5fr;
+  grid-template-rows: auto 1fr;
 }
-.LocationList{
-  grid-column: 2 / 3;
+.AngleSelection{
+  grid-row: 2 / 2;
 }
 
-.LocationInput {
-  grid-column: 3 / 4;
+.Grid {
+  grid-row: 1 / 2;
 }

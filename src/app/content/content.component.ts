@@ -4,7 +4,8 @@ import {Component, OnInit} from '@angular/core';
   selector: 'app-content',
   template: `
     <div class="Content">
-        <p>This is where the content goes!</p>
+      <app-grid class="Grid" [angle] = "angle"></app-grid>
+      <app-angle-selection class="AngleSelection" (angleChanged)="changeAngle($event)"></app-angle-selection>
     </div>
   `,
   styleUrls: ['./content.component.css']
@@ -14,6 +15,12 @@ export class ContentComponent implements OnInit {
   constructor() {
   }
 
+  angle: number;
+
   ngOnInit(): void {
+  }
+
+  public changeAngle(angle: number): void {
+    this.angle = angle;
   }
 }
