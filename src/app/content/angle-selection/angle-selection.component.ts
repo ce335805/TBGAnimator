@@ -8,7 +8,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 export class AngleSelectionComponent implements OnInit {
 
   constructor() {
-    this.angle = 0.5;
+    this.angle = 0.0;
   }
   angle: number;
   @Output() angleChanged: EventEmitter<number> = new EventEmitter<number>();
