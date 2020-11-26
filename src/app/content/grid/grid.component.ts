@@ -11,19 +11,20 @@ export class GridComponent implements AfterViewInit, OnChanges {
 
   constructor() {
     this.angle = 0.;
-    this.frameWidth = 1800;
-    this.frameHight = 800;
+    this.unitLength = 10;
+
+    this.frameWidth = 1006;
+    this.frameHight = 750;
     this.sin60 = 0.86602540378;
     this.cos60 = 0.5;
-    this.unitLength = 7;
   }
 
   @Input() angle: number;
+  @Input() unitLength: number;
   frameWidth: number;
   frameHight: number;
   sin60: number;
   cos60: number;
-  unitLength: number;
 
   public context: CanvasRenderingContext2D;
 
@@ -48,8 +49,10 @@ export class GridComponent implements AfterViewInit, OnChanges {
     this.context.clearRect(0, 0, this.frameWidth, this.frameHight);
     this.context.strokeStyle = 'rgba(200,0,0,1.0)';
     this.drawHexagonGrid();
+    this.context.translate(this.frameWidth / 2 , this.frameHight / 2);
     this.context.rotate((Math.PI / 180) * this.angle);
-    this.context.strokeStyle = 'rgba(0,0,200,1.0)';
+    this.context.translate(- this.frameWidth / 2 , - this.frameHight / 2);
+    this.context.strokeStyle = 'rgba(0,0,200,0.7)';
     this.drawHexagonGrid();
     this.context.restore();
   }
@@ -80,13 +83,11 @@ export class GridComponent implements AfterViewInit, OnChanges {
 
   private drawHexagon() {
     this.context.beginPath();
-    this.context.moveTo(0, 0);
-    this.context.lineTo(-this.sin60 * this.unitLength, this.cos60 * this.unitLength);
+    this.context.moveTo(-this.sin60 * this.unitLength, this.cos60 * this.unitLength);
     this.context.lineTo(-this.sin60 * this.unitLength, (this.cos60 + 1) * this.unitLength);
     this.context.lineTo(0, (2 * this.cos60 + 1) * this.unitLength);
     this.context.lineTo(this.sin60 * this.unitLength, (this.cos60 + 1) * this.unitLength);
     this.context.lineTo(this.sin60 * this.unitLength, this.cos60 * this.unitLength);
-    this.context.closePath();
     this.context.stroke();
   }
 }

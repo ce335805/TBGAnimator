@@ -3,7 +3,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 @Component({
   selector: 'app-angle-selection',
   templateUrl: './angle-selection.component.html',
-  styleUrls: ['./angle-selection.component.css']
+  styleUrls: ['./angle-selection.component.css', './../content.component.css']
 })
 export class AngleSelectionComponent implements OnInit {
 

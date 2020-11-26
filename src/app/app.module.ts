@@ -7,6 +7,7 @@ import {ContentComponent} from './content/content.component';
 import { AngleSelectionComponent } from './content/angle-selection/angle-selection.component';
 import { GridComponent } from './content/grid/grid.component';
 import {FormsModule} from '@angular/forms';
+import {ZoomComponent} from './content/zoom/zoom.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {FormsModule} from '@angular/forms';
     TopBarComponent,
     ContentComponent,
     AngleSelectionComponent,
-    GridComponent
+    GridComponent,
+    ZoomComponent
   ],
   imports: [
     BrowserModule,
