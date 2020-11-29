@@ -1,3 +1,22 @@
-.slideContainer{
+.slideContainer {
   width: 100%;
+  padding-top: 0.5em;
+  display: grid;
+  grid-template-columns: 2.5fr 0.5fr;
+}
+
+.slider {
+  grid-column: 1 / 2;
+  margin-top: 0.95em;
+}
+
+.textInput {
+  grid-column: 2 / 3;
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+}
+
+input[type=text]{
+  font-size: 1.5em;
+  width: 4em;
 }

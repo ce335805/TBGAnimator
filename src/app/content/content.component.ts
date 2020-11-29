@@ -6,6 +6,7 @@ import {Component, OnInit} from '@angular/core';
     <div class="Content">
       <app-zoom class="Zoom" (zoomChanged)="changeZoom($event)"></app-zoom>
       <app-grid class="Grid" [angle] = "angle" [unitLength]="unitLength"></app-grid>
+      <app-explainations class="explainations"></app-explainations>
       <app-angle-selection class="AngleSelection" (angleChanged)="changeAngle($event)"></app-angle-selection>
     </div>
   `,

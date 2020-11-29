@@ -47,7 +47,7 @@ export class GridComponent implements AfterViewInit, OnChanges {
   private draw() {
     this.context.save();
     this.context.clearRect(0, 0, this.frameWidth, this.frameHight);
-    this.context.strokeStyle = 'rgba(200,0,0,1.0)';
+    this.context.strokeStyle = 'rgb(0,200,20)';
     this.drawHexagonGrid();
     this.context.translate(this.frameWidth / 2 , this.frameHight / 2);
     this.context.rotate((Math.PI / 180) * this.angle);

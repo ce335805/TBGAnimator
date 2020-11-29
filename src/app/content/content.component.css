@@ -21,6 +21,13 @@
   grid-row: 1 / 2;
 }
 
+.explainations{
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
 .slideContainer{
   width: 100%;
 }
