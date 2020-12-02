@@ -15,6 +15,8 @@ import {Component, OnInit} from '@angular/core';
 export class ContentComponent implements OnInit {
 
   constructor() {
+    this.angle = 0.;
+    this.unitLength = 10;
   }
 
   angle: number;

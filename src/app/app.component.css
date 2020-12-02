@@ -1,17 +1,13 @@
 .OuterContainer {
-  display: grid;
-  grid-template-rows: 1fr auto;
   row-gap: 3em;
 }
 
 .TopBar {
-  grid-row: 1 / 2;
   background-color: dodgerblue;
   border-radius: 25px;
 }
 
 .Content {
-  grid-row: 2 / 2;
 }
 
 h2 {

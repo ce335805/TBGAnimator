@@ -1,6 +1,6 @@
 .Content {
   display: grid;
-  grid-template-columns: 1fr auto 5fr;
+  grid-template-columns: 1fr auto 8fr;
   grid-template-rows: auto auto;
   row-gap: 10px;
 
