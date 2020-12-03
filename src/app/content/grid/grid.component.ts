@@ -22,7 +22,7 @@ export class GridComponent implements AfterViewInit, OnChanges {
   }
 
   @Input() angle: number;
-  @Input() unitLength: number;
+  unitLength: number;
   frameWidth: number;
   frameHeight: number;
   gridWidth: number;

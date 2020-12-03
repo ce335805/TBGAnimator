@@ -7,7 +7,6 @@ import {ContentComponent} from './content/content.component';
 import { AngleSelectionComponent } from './content/angle-selection/angle-selection.component';
 import { GridComponent } from './content/grid/grid.component';
 import {FormsModule} from '@angular/forms';
-import {ZoomComponent} from './content/zoom/zoom.component';
 import { ExplainationsComponent } from './content/explainations/explainations.component';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { ExplainationsComponent } from './content/explainations/explainations.co
     ContentComponent,
     AngleSelectionComponent,
     GridComponent,
-    ZoomComponent,
     ExplainationsComponent
   ],
   imports: [
