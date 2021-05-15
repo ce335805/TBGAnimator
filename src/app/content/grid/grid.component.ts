@@ -13,8 +13,8 @@ export class GridComponent implements AfterViewInit, OnChanges {
     this.angle = 0.;
     this.unitLength = 10;
 
-    this.frameWidth = 1006;
-    this.frameHeight = 750;
+    this.frameWidth = 1131;
+    this.frameHeight = 800;
     this.gridWidth = this.frameWidth / 1.2;
     this.gridHeight = this.frameHeight / 1.2;
     this.sin60 = 0.86602540378;
@@ -52,10 +52,10 @@ export class GridComponent implements AfterViewInit, OnChanges {
   }
 
   onScroll(e: WheelEvent): void {
-    if (e.deltaY > 0 && this.unitLength < 30) {
-      this.unitLength = this.unitLength + 0.1;
-    } else if (e.deltaY < 0 && this.unitLength > 3) {
-      this.unitLength = this.unitLength - 0.1;
+    if (e.deltaY > 0 && this.unitLength > 3) {
+      this.unitLength = this.unitLength - 0.02 * this.unitLength;
+    } else if (e.deltaY < 0 && this.unitLength < 30) {
+      this.unitLength = this.unitLength + 0.02 * this.unitLength;
     }
     this.draw();
   }
@@ -64,12 +64,13 @@ export class GridComponent implements AfterViewInit, OnChanges {
     this.context.save();
     this.context.clearRect(0, 0, this.frameWidth, this.frameHeight);
     this.drawScale();
-    this.context.strokeStyle = 'rgb(0,200,20)';
+    this.context.strokeStyle = 'rgb(0,64,255)';
+    this.context.lineWidth = 1.5;
     this.drawHexagonGrid();
     this.context.translate(this.frameWidth / 2, this.frameHeight / 2);
     this.context.rotate((Math.PI / 180) * this.angle);
     this.context.translate(-this.frameWidth / 2, -this.frameHeight / 2);
-    this.context.strokeStyle = 'rgba(0,0,200,0.7)';
+    this.context.strokeStyle = 'rgb(0,187,4)';
     this.drawHexagonGrid();
     this.context.restore();
   }
@@ -112,7 +113,7 @@ export class GridComponent implements AfterViewInit, OnChanges {
     this.context.save();
     const nm = this.unitLength / (0.142);
     const yOffset = this.frameHeight - this.gridHeight;
-    const fontSize = 30;
+    const fontSize = 20;
     this.context.font = fontSize + 'px Arial';
     this.context.beginPath();
     this.context.moveTo(5, yOffset);
@@ -122,9 +123,9 @@ export class GridComponent implements AfterViewInit, OnChanges {
     this.context.moveTo(5, nm + yOffset);
     this.context.lineTo(15, nm + yOffset);
     this.context.strokeStyle = 'rgb(40,40,40)';
-    this.context.lineWidth = 3;
+    this.context.lineWidth = 2;
     this.context.stroke();
-    this.context.fillText('1nm', fontSize / 2 + 10, yOffset + nm / 2 + fontSize / 4, 100);
+    this.context.fillText('1nm', fontSize / 2 + 8, yOffset + nm / 2 + fontSize / 4, 100);
     this.context.restore();
   }
 
